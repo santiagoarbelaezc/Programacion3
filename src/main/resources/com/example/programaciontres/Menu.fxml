@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutY="71.0" prefHeight="429.0" prefWidth="150.0" style="-fx-background-color: #FB0036;">
+         <children>
+            <ImageView fitHeight="128.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagenes/FotoLogin.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="boton_registroV" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FD5957;" text="Registrar Vehiculo" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="boton_ventas" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FB0036;" text="Ventas" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="15.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="35.0" prefWidth="150.0" />
+            <Pane prefHeight="35.0" prefWidth="150.0" />
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FD5957;" text="Configuración" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="15.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FB0036;" text="Cerrar Sesión" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane prefHeight="72.0" prefWidth="800.0" style="-fx-background-color: #141414;">
+         <children>
+            <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="27.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Imagenes/269dd16fa1f5ff51accd09e7e1602267-1200x1200.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="61.0" layoutY="21.0" text="Auto_Ahora" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="30.0" />
+               </font>
+            </Label>
+            <Circle fill="#21ff54" layoutX="685.0" layoutY="37.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="697.0" layoutY="25.0" text="Activo" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Light" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="150.0" layoutY="71.0" prefHeight="429.0" prefWidth="652.0" style="-fx-background-color: #333333;">
+         <children>
+            <Label fx:id="label_aux" layoutX="296.0" layoutY="10.0" text="Menu" textFill="WHITE">
+               <font>
+                  <Font name="Calibri" size="25.0" />
+               </font>
+            </Label>
+            <StackPane prefHeight="429.0" prefWidth="658.0">
+               <children>
+                  <Pane fx:id="pane_registroV" prefHeight="429.0" prefWidth="631.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <TableView fx:id="tblRegistroVehiculos" layoutX="14.0" layoutY="173.0" prefHeight="190.0" prefWidth="609.0">
+                           <columns>
+                              <TableColumn fx:id="col_placa" prefWidth="120.0" text="Placa" />
+                              <TableColumn fx:id="col_marca" prefWidth="90.0" text="Marca" />
+                              <TableColumn fx:id="col_referencia" prefWidth="97.0" text="Referencia" />
+                              <TableColumn fx:id="col_modelo" prefWidth="79.0" text="Modelo" />
+                              <TableColumn fx:id="col_precio" prefWidth="130.0" text="Precio" />
+                              <TableColumn fx:id="num_ruedas" prefWidth="91.0" text="Num. Ruedas" />
+                           </columns>
+                        </TableView>
+                        <GridPane layoutX="283.0" layoutY="30.0" prefHeight="120.0" prefWidth="340.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="109.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="13.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="103.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="7.0" prefWidth="12.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="114.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextField fx:id="txt_marca" prefHeight="25.0" prefWidth="133.0" promptText="Marca" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_referencia" prefHeight="25.0" prefWidth="133.0" promptText="Referencia" GridPane.rowIndex="2" />
+                              <TextField fx:id="txt_modelo" prefHeight="25.0" prefWidth="133.0" promptText="Modelo" GridPane.rowIndex="3" />
+                              <TextField fx:id="txt_precio" prefHeight="25.0" prefWidth="133.0" promptText="Precio" GridPane.rowIndex="4" />
+                              <TextField fx:id="txt_ruedas" prefHeight="25.0" prefWidth="133.0" promptText="Numero Ruedas" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_cilindraje" prefHeight="25.0" prefWidth="133.0" promptText="Cilindraje" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <TextField fx:id="txt_tanque" prefHeight="25.0" prefWidth="133.0" promptText="Tamaño Tanque" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextField fx:id="txt_carga" prefHeight="25.0" prefWidth="133.0" promptText="Capacidad Carga" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                              <TextField fx:id="txt_puertas" prefHeight="25.0" prefWidth="133.0" promptText="Numero Puertas" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                              <Label text="Moto" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Calibri Light" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="32.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Vehiculo" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="25.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Camión" textFill="WHITE" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font name="Calibri Light" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="30.0" />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Auto" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Calibri Light" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets left="35.0" />
+                                 </GridPane.margin>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="txt_placa" layoutX="21.0" layoutY="75.0" prefHeight="31.0" prefWidth="172.0" promptText="Placa">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="55.0" layoutY="17.0" text="¡Advertencia!" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="21.0" layoutY="42.0" text="Campo necesario, no repetir placa" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Light" size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="29.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Imagenes/R.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="boton_registro" layoutX="66.0" layoutY="121.0" mnemonicParsing="false" style="-fx-background-color: #30D874;" text="Registrar">
+                           <font>
+                              <Font name="Calibri Light" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="boton_buscar" layoutX="200.0" layoutY="76.0" mnemonicParsing="false" text="Buscar">
+                           <font>
+                              <Font name="Calibri Light" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="boton_registro1" layoutX="195.0" layoutY="124.0" mnemonicParsing="false" style="-fx-background-color: B90010;" text="Eliminar" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Light" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pane_bienvenido" prefHeight="385.0" prefWidth="608.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="229.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Imagenes/Usuarip.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="214.0" layoutY="181.0" text="Bienvenido " textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Light" size="38.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="271.0" layoutY="225.0" text="label" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Light" size="34.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

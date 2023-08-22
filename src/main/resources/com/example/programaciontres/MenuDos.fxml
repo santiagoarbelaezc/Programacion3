@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programaciontres.Menu">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="920.0">
+         <children>
+            <VBox layoutY="71.0" prefHeight="531.0" prefWidth="150.0" style="-fx-background-color: #FB0036;">
+               <children>
+                  <ImageView fitHeight="128.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagenes/FotoLogin.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="boton_inicio" mnemonicParsing="false" onAction="#handleClick" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FB0036;" text="Inicio" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="boton_registroV" mnemonicParsing="false" onAction="#handleClick" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FD5957;" text="Registrar Vehiculo" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="boton_ventas" mnemonicParsing="false" onAction="#handleClick" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FB0036;" text="Ventas" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Pane prefHeight="35.0" prefWidth="150.0" />
+                  <Pane prefHeight="35.0" prefWidth="150.0" />
+                  <Pane prefHeight="35.0" prefWidth="150.0" />
+                  <Pane prefHeight="35.0" prefWidth="150.0" />
+                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FD5957;" text="Configuración" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="cerrar_programa" mnemonicParsing="false" onAction="#OnCerrarPrograma" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #FB0036;" text="Cerrar Sesión" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane prefHeight="72.0" prefWidth="920.0" style="-fx-background-color: #141414;">
+               <children>
+                  <ImageView fitHeight="22.0" fitWidth="25.0" layoutX="14.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imagenes/269dd16fa1f5ff51accd09e7e1602267-1200x1200.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="42.0" layoutY="25.0" text="Auto_Ahora" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="27.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#21ff54" layoutX="828.0" layoutY="36.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="840.0" layoutY="25.0" text="Activo" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_inicio" layoutX="431.0" layoutY="32.0" text="Inicio" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Light" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="150.0" layoutY="71.0" prefHeight="531.0" prefWidth="771.0" style="-fx-background-color: #333333;">
+               <children>
+                  <Label fx:id="label_aux" layoutX="296.0" layoutY="10.0" text="Menu" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="25.0" />
+                     </font>
+                  </Label>
+                  <StackPane prefHeight="531.0" prefWidth="771.0">
+                     <children>
+                        <Pane fx:id="pane_registroV" prefHeight="473.0" prefWidth="712.0" style="-fx-background-color: #333333;">
+                           <children>
+                              <TableView fx:id="tblRegistroVehiculos" layoutX="32.0" layoutY="263.0" prefHeight="225.0" prefWidth="606.0">
+                                 <columns>
+                                    <TableColumn fx:id="col_placa" prefWidth="105.0" text="Placa" />
+                                    <TableColumn fx:id="col_marca" prefWidth="96.0" text="Marca" />
+                                    <TableColumn fx:id="col_referencia" prefWidth="88.0" text="Referencia" />
+                                    <TableColumn fx:id="col_modelo" prefWidth="83.0" text="Modelo" />
+                                    <TableColumn fx:id="col_precio" prefWidth="145.0" text="Precio" />
+                                    <TableColumn fx:id="num_ruedas" prefWidth="86.0" text="Num. Ruedas" />
+                                 </columns>
+                              </TableView>
+                              <GridPane layoutX="351.0" layoutY="17.0" prefHeight="187.0" prefWidth="402.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="109.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="13.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="103.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="7.0" prefWidth="12.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="114.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="txt_marca" prefHeight="25.0" prefWidth="133.0" promptText="Marca" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txt_referencia" prefHeight="25.0" prefWidth="133.0" promptText="Referencia" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txt_modelo" prefHeight="25.0" prefWidth="133.0" promptText="Modelo" GridPane.rowIndex="3" />
+                                    <TextField fx:id="txt_precio" prefHeight="25.0" prefWidth="133.0" promptText="Precio" GridPane.rowIndex="4" />
+                                    <TextField fx:id="txt_ruedas" prefHeight="25.0" prefWidth="133.0" promptText="Numero Ruedas" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txt_cilindraje" prefHeight="25.0" prefWidth="133.0" promptText="Cilindraje" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <TextField fx:id="txt_tanque" prefHeight="25.0" prefWidth="133.0" promptText="Tamaño Tanque" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                    <TextField fx:id="txt_carga" prefHeight="25.0" prefWidth="133.0" promptText="Capacidad Carga" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                    <TextField fx:id="txt_puertas" prefHeight="25.0" prefWidth="133.0" promptText="Numero Puertas" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                    <Label text="Moto" textFill="WHITE" GridPane.columnIndex="2">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="32.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Vehiculo" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="25.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Camión" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="30.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Auto" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="35.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <ChoiceBox fx:id="selec_gasolina" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                    <Label text="¿Gasolina?" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="llenarBoton" mnemonicParsing="false" onAction="#OnLLenarLista" style="-fx-background-color: FCB215;" text="Llenar" GridPane.columnIndex="4">
+                                       <font>
+                                          <Font name="Calibri Light" size="13.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Button>
+                                 </children>
+                              </GridPane>
+                              <TextField fx:id="txt_placa" layoutX="35.0" layoutY="146.0" prefHeight="31.0" prefWidth="172.0" promptText="Placa">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="91.0" layoutY="17.0" text="¡Advertencia!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="47.0" layoutY="40.0" text="Campo necesario, no repetir placa" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="65.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/R.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="boton_registro" layoutX="32.0" layoutY="186.0" mnemonicParsing="false" onAction="#OnBotonRegistrarV" style="-fx-background-color: #30D874;" text="Registrar">
+                                 <font>
+                                    <Font name="Calibri Light" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="boton_buscar" layoutX="219.0" layoutY="147.0" mnemonicParsing="false" onAction="#OnBuscarVehiculo" text="Buscar">
+                                 <font>
+                                    <Font name="Calibri Light" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="boton_eliminarV" layoutX="237.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnEliminarVehiculo" style="-fx-background-color: B90010;" text="Eliminar" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button fx:id="boton_actualizar_tabla" layoutX="537.0" layoutY="229.0" mnemonicParsing="false" onAction="#ActualizarTabla" style="-fx-background-color: #FFFFFF;" text="Actualizar Tabla">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="20.0" layoutY="57.0" text="Para Actualizar, necesario volver a llenar campos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="boton_actualizar" layoutX="112.0" layoutY="227.0" mnemonicParsing="false" onAction="#OnActualizarDatos" style="-fx-background-color: #00578A;" text="Actualizar Datos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="15.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <ChoiceBox fx:id="box_vehiculo" layoutX="193.0" layoutY="111.0" prefHeight="25.0" prefWidth="89.0" />
+                              <Label layoutX="48.0" layoutY="114.0" text="Seleccione Vehiculo" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="boton_listar" layoutX="441.0" layoutY="229.0" mnemonicParsing="false" onAction="#OnListar" style="-fx-background-color: FCB215;" text="Listar Tabla">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label fx:id="label_busqueda" layoutX="219.0" layoutY="178.0" text="Buscando..." textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                              <GridPane layoutX="657.0" layoutY="252.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button fx:id="boton_filtrarMoto" mnemonicParsing="false" onAction="#OnFlitrarMoto" style="-fx-background-color: FCB215;" text="Filtrar Motos" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font name="Calibri Light" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="boton_filtrarCamion" mnemonicParsing="false" onAction="#OnFiltrarCamion" style="-fx-background-color: FCB215;" text="Fi. Camiones" GridPane.rowIndex="4">
+                                       <font>
+                                          <Font name="Calibri Light" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="boton_filtrarAuto" mnemonicParsing="false" onAction="#OnFiltrarAutos" style="-fx-background-color: FCB215;" text="Filtrar Autos" GridPane.rowIndex="6">
+                                       <font>
+                                          <Font name="Calibri Light" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <Label text="Filtrar Tabla" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Light" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <Label layoutX="31.0" layoutY="74.0" text="Luego Registrar nuevamente para completar" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pane_ventas" prefHeight="429.0" prefWidth="631.0" style="-fx-background-color: #333333;">
+                           <children>
+                              <TableView fx:id="tblRegistroVehiculos2" layoutX="83.0" layoutY="291.0" prefHeight="201.0" prefWidth="606.0">
+                                 <columns>
+                                    <TableColumn fx:id="col_placa1" prefWidth="120.0" text="Placa" />
+                                    <TableColumn fx:id="col_marca1" prefWidth="90.0" text="Marca" />
+                                    <TableColumn fx:id="col_referencia1" prefWidth="97.0" text="Referencia" />
+                                    <TableColumn fx:id="col_modelo1" prefWidth="79.0" text="Modelo" />
+                                    <TableColumn fx:id="col_precio1" prefWidth="130.0" text="Precio" />
+                                    <TableColumn fx:id="num_ruedas1" prefWidth="91.0" text="Num. Ruedas" />
+                                 </columns>
+                              </TableView>
+                              <TextField fx:id="txt_placa1" layoutX="27.0" layoutY="147.0" prefHeight="31.0" prefWidth="143.0" promptText="Placa">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="71.0" layoutY="38.0" text="¡Advertencia!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="67.0" layoutY="68.0" prefHeight="17.0" prefWidth="119.0" text="Campos necesarios" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="43.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/R.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="boton_vender_vehiculo" layoutX="29.0" layoutY="208.0" mnemonicParsing="false" onAction="#OnVender" style="-fx-background-color: #00578A;" text="Vender" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="boton_buscar1" layoutX="182.0" layoutY="149.0" mnemonicParsing="false" onAction="#OnBuscarVehiculo" text="Buscar">
+                                 <font>
+                                    <Font name="Calibri Light" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="boton_cancelar" layoutX="126.0" layoutY="211.0" mnemonicParsing="false" onAction="#OnCancelar" style="-fx-background-color: B90010;" text="Cancelar" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="boton_actualizar_tabla1" layoutX="582.0" layoutY="253.0" mnemonicParsing="false" onAction="#ActualizarTabla" style="-fx-background-color: #FFFFFF;" text="Actualizar Tabla">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="txt_cliente" layoutX="27.0" layoutY="101.0" prefHeight="31.0" prefWidth="143.0" promptText="ID Cliente">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <GridPane gridLinesVisible="true" layoutX="367.0" layoutY="164.0" prefHeight="60.0" prefWidth="342.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="159.0" text="Valor de Ventas Totales:" textFill="WHITE" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="159.0" text="Num. Vehiculos Vendidos:" textFill="WHITE">
+                                       <font>
+                                          <Font name="Calibri Light" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="num_vehiculos" text="." textFill="WHITE" GridPane.columnIndex="1">
+                                       <font>
+                                          <Font name="Calibri Light" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="70.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="ventas_acum" text="." textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Calibri Light" size="15.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="60.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <Label layoutX="459.0" layoutY="14.0" text="Vehiculos Vendidos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tblRegistroVehiculos3" layoutX="302.0" layoutY="51.0" prefHeight="100.0" prefWidth="445.0">
+                                 <columns>
+                                    <TableColumn fx:id="col_placa11" prefWidth="67.0" text="Placa" />
+                                    <TableColumn fx:id="col_marca11" prefWidth="76.0" text="Marca" />
+                                    <TableColumn fx:id="col_referencia11" prefWidth="69.0" text="Referencia" />
+                                    <TableColumn fx:id="col_modelo11" prefWidth="56.0" text="Modelo" />
+                                    <TableColumn fx:id="col_precio11" prefWidth="106.0" text="Precio" />
+                                    <TableColumn fx:id="num_ruedas11" prefWidth="69.0" text="Num. Ruedas" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="297.0" layoutY="254.0" text="Vehiculos Disponibles" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="boton_actualizar_tabla11" layoutX="632.0" layoutY="13.0" mnemonicParsing="false" onAction="#ActualizarTabla2" style="-fx-background-color: #FFFFFF;" text="Actualizar Tabla">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="label_buscando2" layoutX="183.0" layoutY="186.0" prefHeight="17.0" prefWidth="119.0" text="Buscando..." textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="pane_bienvenido" prefHeight="385.0" prefWidth="608.0" style="-fx-background-color: #333333;">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/Usuarip.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="206.0" layoutY="71.0" text="Bienvenido " textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="38.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="195.0" layoutY="120.0" text="Santiago Arbelaez" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="28.0" />
+                                 </font>
+                              </Label>
+                              <TableView layoutX="508.0" layoutY="67.0" prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #FB0036;">
+                                <columns>
+                                  <TableColumn prefWidth="101.0" text="Disponibles" />
+                                  <TableColumn prefWidth="98.0" text="Ventas" />
+                                </columns>
+                              </TableView>
+                              <Label layoutX="119.0" layoutY="250.0" text="Autos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="555.0" layoutY="34.0" text="Novedades" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="120.0" fitWidth="233.0" layoutX="38.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/R%20(1)4254362.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="120.0" layoutY="438.0" mnemonicParsing="false" style="-fx-background-color: #FB0036;" text="Detalle" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="349.0" layoutY="250.0" text="Motos" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="120.0" fitWidth="246.0" layoutX="501.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/camionprueba3-768x396.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="553.0" layoutY="250.0" text="Camiones" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri Light" size="28.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="364.0" layoutY="438.0" mnemonicParsing="false" style="-fx-background-color: #FB0036;" text="Detalle" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="586.0" layoutY="438.0" mnemonicParsing="false" style="-fx-background-color: #FB0036;" text="Detalle" textFill="WHITE">
+                                 <font>
+                                    <Font name="Calibri" size="15.0" />
+                                 </font>
+                              </Button>
+                              <ImageView fitHeight="113.0" fitWidth="201.0" layoutX="286.0" layoutY="295.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Imagenes/R2232352.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </StackPane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
